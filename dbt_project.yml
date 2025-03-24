@@ -1,0 +1,58 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'apple_connectors'
+version: '1.1.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'apple_connectors'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  apple_connectors:
+    apple:
+      adgroup_performance:
+        staging:
+          +materialized: view
+        intermediate:
+          +materialized: view
+        marts:
+          +materialized: table
+      keyword_performance:
+        staging:
+          +materialized: view
+        intermediate:
+          +materialized: view
+        marts:
+          +materialized: table
+
+# Define variables here
+vars:
+  appleads_adgroup_performance_v_1_identifier: appleads_adgroup_performance_v_1
+  appleads_keyword_performance_v_1_identifier: appleads_keyword_performance_v_1
+  ad_group_history_identifier: ad_group_history
+  country_or_region_history_identifier: country_or_region_history
+  targeting_dimensions_history_identifier: targeting_dimensions_history
+  campaign_history_identifier: campaign_history
+  organization_identifier: organization
+  search_term_report_identifier: search_term_report
+  keyword_history_identifier: keyword_history
+  keyword_report_identifier: keyword_report
+  campaign_segment_separator: _
+  client_account_structure: None
+  custom_fields: None
+  account_currency: GBP

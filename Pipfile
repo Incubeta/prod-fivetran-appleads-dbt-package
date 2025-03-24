@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dbt-core = "*"
+dbt-bigquery = "*"
+sqlfluff = "*"
+sqlfluff-templater-dbt = "*"
+
+[dev-packages]
+pre-commit = "*"
+dbt-duckdb = "*"
+sqlfluff-templater-dbt = "*"
+
+[requires]
+python_version = "3.13"

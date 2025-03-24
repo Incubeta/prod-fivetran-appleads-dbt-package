@@ -1,0 +1,11 @@
+models:
+  - name: stg_adgroup_performance
+    config:
+      event_time: day
+  - name: stg_ad_group_report
+    config:
+      event_time: day
+  - name: stg_country_or_region_history
+  - name: stg_targeting_dimensions_history
+  - name: stg_campaign_history
+  - name: stg_organization

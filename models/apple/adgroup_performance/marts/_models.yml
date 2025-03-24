@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: pub_base-appleads-adgroup_performance
+    config:
+      schema: PUB_base
+      alias: appleads-adgroup_performance
+      materialized: incremental
+      incremental_strategy: microbatch
+      full_refresh: false
+      event_time: day
+      batch_size: day
+      begin: 2025-01-01
+      partition_by:
+        field: day
+        data_type: date
+        granularity: day

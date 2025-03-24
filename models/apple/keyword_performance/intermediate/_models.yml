@@ -1,0 +1,4 @@
+models:
+  - name: int_keyword_performance
+    config:
+      event_time: day

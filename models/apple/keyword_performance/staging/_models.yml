@@ -1,0 +1,12 @@
+models:
+  - name: stg_keyword_performance
+    config:
+      event_time: day
+  - name: stg_keyword_report
+    config:
+      event_time: day
+  - name: stg_search_term_report
+  - name: stg_keyword_history
+  - name: stg_ad_group_history
+  - name: stg_campaign_history
+  - name: stg_organization
